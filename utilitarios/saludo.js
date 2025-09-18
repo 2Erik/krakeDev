@@ -6,6 +6,12 @@ saludar=function(){
     let mensajeBinvenida="bienvenido "+nombre+" "+apellido;
 
     mostrarTexto("lblresultado",mensajeBinvenida);
+    mostrarImagen("imgSaludo","./imagenes/saludo.gif")
+}
+
+mostrarImagen=function(idComponente,rutaImagen){
+    let componente=document.getElementById(idComponente);
+    componente.src=rutaImagen;
 }
 
 mostrarTexto=function(idComponente,mensaje){
