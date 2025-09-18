@@ -7,6 +7,12 @@ saludar=function(){
 
     mostrarTexto("lblresultado",mensajeBinvenida);
     mostrarImagen("imgSaludo","./imagenes/saludo.gif")
+    mostrarTextocaja("txtNombre","")
+}
+
+mostrarTextocaja=function(idComponente,mensaje){
+    let componente=document.getElementById(idComponente);
+    componente.value=mensaje;
 }
 
 mostrarImagen=function(idComponente,rutaImagen){
