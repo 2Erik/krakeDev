@@ -6,6 +6,7 @@ validarPlaca=function(){
     if(erroresEstructura==null){
         let bandera=false;
         let provincia;
+        let pico;
         mostrarTexto("lblResultado","ESTRUCTURA VALIDA");
         provincia=obtenerProvincia(placa);
 
@@ -18,15 +19,27 @@ validarPlaca=function(){
 
         if(bandera===true){
             mostrarTexto("lblVehiculo",vehiculo);
-        }else{
-            mostrarTexto("lblVehiculo","");
+        }
+
+        pico=obtenerDiaPicoYPlaca(placa);
+
+        if(bandera===true){
+            mostrarTexto("lblPico",pico);
         }
     }else{
         mostrarTexto("lblResultado","ESTRUCTURA INCORRECTA\n");
         mostrarTexto("lblErrores",erroresEstructura);
-        mostrarTexto("lblProvincia","")
-
+        mostrarTexto("lblProvincia","");
+        mostrarTexto("lblVehiculo","");
+        mostrarTexto("lblPico","");
     }
+}
 
-
+limpiar=function(){
+    mostrarTexto("lblResultado","");
+    mostrarTexto("lblErrores","");
+    mostrarTexto("lblProvincia","");
+    mostrarTexto("lblVehiculo","");
+    mostrarTexto("lblPico","");
+    mostrarTextoEnCaja("txtPlaca","");
 }

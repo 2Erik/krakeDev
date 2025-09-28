@@ -126,3 +126,19 @@ obtenerTipoVehiculo=function(placa){
     }
 }
 
+obtenerDiaPicoYPlaca=function(placa){
+    let indicePicoPlaca=placa.length-1;
+    let picoPlaca=placa.charCodeAt(indicePicoPlaca);
+    if(picoPlaca===49 || picoPlaca===50){
+        return "Lunes";
+    }else if(picoPlaca===51 ||picoPlaca===52){
+        return "Martes";
+    }else if(picoPlaca===53 || picoPlaca===54){
+        return "Miercoles";
+    }else if(picoPlaca===55 || picoPlaca===56){
+        return "Jueves";
+    }else if(picoPlaca===57 || picoPlaca===48){
+        return "Viernes";
+    }
+}
+
