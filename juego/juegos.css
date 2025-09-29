@@ -1,0 +1,81 @@
+body{
+    background-color: #28B4E5;
+}
+
+.tituto{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenedorCuerpo{
+    display: flex;
+    justify-content: center;
+}
+
+.puntos{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.contenedorImagen{
+    display: flex;
+    justify-content: center;
+}
+
+.contImagen{
+    display: flex;
+    justify-content: center;
+}
+
+.contResultado{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+}
+
+.ganador{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.estiloBoton{
+    margin-right: 20px;
+    background-color: #4c7aaf; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.estiloBoton:hover {
+    background-color:white; 
+    color: #4c7aaf;
+    border:1px;
+    border-color: #4c7aaf;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #4c7aaf; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
