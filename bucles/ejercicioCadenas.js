@@ -25,3 +25,19 @@ cadenaInversa = function(cadena){
     }
     console.log(inversa);
 }
+
+buscarLetra = function(cadena,letra){
+    let letraIterada;
+    let existeLetra = false;
+    for(let i=0;i<cadena.length;i++){
+        letraIterada=cadena.charAt(i);
+        if(letraIterada===letra){
+            existeLetra=true;
+        }
+    }
+    if(existeLetra==letra){
+        return true;
+    }else{
+        return false;
+    }
+}
