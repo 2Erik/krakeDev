@@ -53,3 +53,12 @@ validar=function(letra){
         }
     }
 }
+
+ingresarLetra=function(){
+    let letra=recuperarTexto("txtLetra");
+    if(esMayuscula(letra)){
+        validar(letra);
+    }else{
+        alert("SOLO SE ASEPTAN MAYUSCULAS");
+    }
+}
