@@ -35,6 +35,22 @@ recuperarFloat = function(idComponente){
     return valorFlotante;
 }
 
+esDigito=function(caracter){
+    if(caracter.charCodeAt(0)>=48 && caracter.charCodeAt(0)<=57){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+esMayuscula=function(caracter,indice){
+    if(caracter.charCodeAt(indice)>=65 && caracter.charCodeAt(indice)<=90){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
 }
