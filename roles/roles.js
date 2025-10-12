@@ -100,11 +100,9 @@ buscarEmpleado=function(cedula){
 }
 
 ejecutarNuevo=function(){
-    habilitarComponente("txtCedula");
-    habilitarComponente("txtNombre");
-    habilitarComponente("txtApellido");
-    habilitarComponente("txtSueldo");
-    habilitarComponente("btnGuardar");
+    habilitarCamposEmpleado();
+    limpiarCajasDeTexto();
+    limpiarErrores();
 
     esNuevo=true;
 }
@@ -135,11 +133,7 @@ mostrarOpcionEmpleado=function(){
     ocultarComponente("divResumen");
     mostrarEmpleados();
 
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarCamposEmpleado();
 
 }
 
@@ -153,4 +147,34 @@ mostrarOpcionResumen=function(){
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
     mostrarComponente("divResumen");
+}
+
+deshabilitarCamposEmpleado = function() {
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
+}
+
+habilitarCamposEmpleado = function() {
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+}
+
+limpiarCajasDeTexto=function(){
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+}
+
+limpiarErrores=function(){
+    mostrarTexto("lblErrorCedula","");
+    mostrarTexto("lblErrorNombre","");
+    mostrarTexto("lblErrorApellido","");
+    mostrarTexto("lblErrorSueldo","");
 }
