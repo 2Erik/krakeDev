@@ -329,15 +329,19 @@ mostrarRol=function(){
 mostrarTotales=function(){
     let totalEmpleado=0;
     let totalEmpleador=0;
-    let totalAPagar;
+    let totalAPagar=0;
+    let totalNominal=0;
 
-    for(let i=0;i,roles.length;i++){
+    for(let i=0;i,i<roles.length;i++){
         totalEmpleado += roles[i].aporteEmpleado;
         totalEmpleador += roles[i].aporteEmpleador;
         totalAPagar += roles[i].valorAPagar;
     }
 
+    totalNominal = totalAPagar + totalEmpleado +totalEmpleador;
+
     mostrarTexto("infoTotalPago",totalAPagar);
     mostrarTexto("infoAporteEmpresa",totalEmpleador);
     mostrarTexto("infoAporteEmpleado",totalEmpleado);
+    mostrarTexto("infoTotalNominal",totalNominal);
 }
