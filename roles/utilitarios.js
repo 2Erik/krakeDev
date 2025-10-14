@@ -59,6 +59,18 @@ recuperarTextoDiv=function(idComponente){
     return valorObtenido;
 }
 
+recuperarFloatDiv=function(idComponente){
+    let valorCaja= recuperarTextoDiv(idComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
+}
+
+recuperarIntDiv=function(idComponente){
+    let valorCaja= recuperarTextoDiv(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
+}
+
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
 }

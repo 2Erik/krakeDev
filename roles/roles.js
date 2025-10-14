@@ -4,6 +4,8 @@ let empleados = [
     {cedula:"0594105087",nombre:"Armando",apellido:"Paredes",sueldo:600.0}
 ];
 
+let roles=[];
+
 let esNuevo=false;
 
 ejecutarBusqueda = function(){
@@ -171,6 +173,7 @@ mostrarOpcionRol=function(){
     ocultarComponente("divEmpleado");
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardarRol");
 }
 
 mostrarOpcionResumen=function(){
@@ -201,7 +204,6 @@ limpiarCajasDeTexto=function(){
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtSueldo","");
     deshabilitarCamposEmpleado();
-    
     esNuevo = false;
 }
 
@@ -210,4 +212,46 @@ limpiarErrores=function(){
     mostrarTexto("lblErrorNombre","");
     mostrarTexto("lblErrorApellido","");
     mostrarTexto("lblErrorSueldo","");
+}
+
+// Funciones para el campo ROL
+
+buscarPorRol = function(){
+    let buscarCedulaRol = recuperarTexto("txtBusquedaCedulaRol");
+
+    let empleadoRol=buscarEmpleado(buscarCedulaRol);
+
+    if(empleadoRol==null){
+        alert("EL EMPLEADO NO EXISTE");
+    }else{
+        mostrarTexto("infoCedula",empleadoRol.cedula);
+        mostrarTexto("infoNombre",`${empleadoRol.nombre} ${empleadoRol.apellido}`);
+        mostrarTexto("infoSueldo",empleadoRol.sueldo);
+    }
+}
+
+calcularAporteEmpleado=function(sueldoEmpleado){
+    let porcentajeAporte = 0.0945;
+    return porcentajeAporte * sueldoEmpleado;
+}
+
+calcularValorAPagar=function(sueldoEmpleado,aporteIEES,descuento){
+    habilitarComponente("btnGuardarRol");
+    return sueldoEmpleado-aporteIEES-descuento;
+}
+
+calcularRol=function(){
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+    let aporteempleado;
+    let valorAPagar;
+
+    if(descuento<0 || descuento>sueldo){
+        alert(`El descuento debe estar en el rando de 0 y ${sueldo}`);
+    }else{
+        aporteempleado = calcularAporteEmpleado(sueldo);
+        valorAPagar = calcularValorAPagar(sueldo,aporteempleado,descuento);
+        mostrarTexto("infoIESS",aporteempleado);
+        mostrarTexto("infoPago",valorAPagar);
+    }
 }
