@@ -201,6 +201,7 @@ limpiarCajasDeTexto=function(){
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtSueldo","");
     deshabilitarCamposEmpleado();
+    
     esNuevo = false;
 }
 
