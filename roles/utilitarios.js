@@ -51,6 +51,14 @@ esMayuscula=function(caracter,indice){
     }
 }
 
+recuperarTextoDiv=function(idComponente){
+    let componente;
+    let valorObtenido;
+    componente=document.getElementById(idComponente);
+    valorObtenido=componente.textContent;
+    return valorObtenido;
+}
+
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
 }

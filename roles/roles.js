@@ -6,6 +6,26 @@ let empleados = [
 
 let esNuevo=false;
 
+ejecutarBusqueda = function(){
+    let cedula=recuperarTexto("txtBusquedaCedula");
+
+    let empleadoEncontrado=buscarEmpleado(cedula);
+
+    if(empleadoEncontrado==null){
+        alert("EMPLEADO NO EXISTE");
+    }else{
+        mostrarTextoEnCaja("txtCedula",empleadoEncontrado.cedula);
+        mostrarTextoEnCaja("txtNombre",empleadoEncontrado.nombre);
+        mostrarTextoEnCaja("txtApellido",empleadoEncontrado.apellido);
+        mostrarTextoEnCaja("txtSueldo",empleadoEncontrado.sueldo);
+
+        deshabilitarComponente("txtCedula");
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+    }
+}
+
 guardar=function(){
     let cedula=recuperarTexto("txtCedula");
     let nombre=recuperarTexto("txtNombre");
@@ -74,8 +94,19 @@ guardar=function(){
         if(nuevoEmpleado==true){
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
+            esNuevo = false;
         }else{
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA: "+empleado.cedula);
+            let empleadoAModificar=buscarEmpleado(empleado.cedula);
+            
+            empleadoAModificar.nombre=empleado.nombre;
+            empleadoAModificar.apellido=empleado.apellido;
+            empleadoAModificar.sueldo=empleado.sueldo;
+            alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+
+            mostrarEmpleados();
+            limpiarErrores();
+            limpiarCajasDeTexto();
         }
     }
 }
@@ -101,7 +132,6 @@ buscarEmpleado=function(cedula){
 
 ejecutarNuevo=function(){
     habilitarCamposEmpleado();
-    limpiarCajasDeTexto();
     limpiarErrores();
 
     esNuevo=true;
@@ -170,6 +200,8 @@ limpiarCajasDeTexto=function(){
     mostrarTextoEnCaja("txtNombre","");
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtSueldo","");
+    deshabilitarCamposEmpleado();
+    esNuevo = false;
 }
 
 limpiarErrores=function(){
