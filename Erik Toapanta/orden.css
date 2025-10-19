@@ -1,0 +1,119 @@
+body {
+    background-color: #8DEBFC;
+    margin: 0;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingresoDatos {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20px;
+    width: 100px;
+}
+
+.cajaTxt {
+    border-radius: 10px;
+    border: 1px solid rgb(237, 97, 37);
+    font-size: 14px;
+    color: rgb(7, 110, 245);
+    padding: 4px;
+}
+
+.boton {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.estiloBoton {
+    background-color: rgb(57, 26, 214);
+    border: 1px solid rgb(237, 97, 37);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.stlTabla {
+    display: flex;
+    justify-content: center;
+}
+
+.stlTabla table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.stlTabla th {
+    background-color: rgb(57, 26, 214);
+    color: white;
+    padding: 10px;
+    border: 1px solid rgb(237, 97, 37);
+    font-size: 15px;
+}
+
+.stlTabla td {
+    background-color: #E8F7FB;
+    color: rgb(7, 110, 245);
+    padding: 8px;
+    border: 1px solid rgb(237, 97, 37);
+    font-size: 14px;
+}
+
+.stlTabla tr:nth-child(even) td {
+    background-color: #D7F0F9;
+}
+
+.estiloBotonBuscar{
+    background-color: rgb(57, 26, 214);
+    margin-right: 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid rgb(237, 97, 37);
+}
+
+.respuesta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.respuesContenido{
+    margin-right: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
